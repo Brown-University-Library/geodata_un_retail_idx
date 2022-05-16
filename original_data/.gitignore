@@ -1,0 +1,7 @@
+# Ignore all source data
+*
+
+# Except the readme and docs
+!.gitignore
+!README.txt
+!PABooklet.pdf
