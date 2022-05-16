@@ -1,0 +1,17 @@
+group,cat_code
+Food And Non-alcoholic Beverages ,FOOD
+Alcoholic Beverages And Tobacco ,ALCO
+Clothing And Footwear ,CLTH
+"Housing, Water, Electricity, Gas And Fuels ",HOUS
+"Furniture, Household Equipment And Routine Maintenance Of The House ",FURN
+Health ,HEAL
+Transport ,TRNS
+Communication ,COMM
+Recreation And Culture ,CLTR
+Education ,EDUC
+Restaurants And Hotels ,RHTL
+Miscellaneous Goods And Services ,MISC
+Medical Insurance ,MEDI
+Pension Contribution ,PNSN
+Out Area ,OUTA
+Total,TOTL
