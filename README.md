@@ -1,60 +1,46 @@
-This dataset is a time series of retail price indices for various categories of goods and services that reflect the relative cost-of-living of United Nations (UN) international staff stationed at duty stations around the world.
+This dataset is a time series of retail price indices that reflect the relative costs of various categories of goods and services experienced by United Nations (UN) staff at duty stations around the world.
 
-This page was last updated on May 17, 2022, with retail price index data available from January 2004 through December 2021.
+This page was last updated on May 17, 2022.  The most recent update includes data from January 2004 through December 2021.
 
 ## Access
 
-The data files in this page are licensed under a [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/).  Specifically, they are to be used for non-commercial research purposes, they cannot be redistributed or republished, and the United Nations International Civil Service Commission (UN ICSC) must be cited as a source when the data is used for research.  
+The data files in this repository are licensed under a [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/).  Specifically, they are to be used for non-commercial research purposes, they cannot be redistributed or republished, and the United Nations International Civil Service Commission (UN ICSC) must be cited as a source when the data is used for research.  
 
 The full time series is available as a .csv file in either a [long](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/final_data/aggregate_files/all_un_icsc_rpid.csv) or a [wide](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/final_data/aggregate_files/all_un_icsc_rpid_pivoted.csv) format.  [Individual .csv files for particular year-month snapshots](https://github.com/Brown-University-Library/geodata_un_retail_idx/tree/main/final_data/year_month_files) are also available for viewing or download.  Data availability varies by country over time; see the [full data extent file](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/final_data/aggregate_files/data_extent.csv) for details.
 
 ## Documentation
 
-The UN ICSC originally created these retail price indices in order to adjust the salaries of UN staff around the world based on variations in the cost of living.  However, they also publish these data on a [dedicated website](https://unicsc.org/Home/DataRPI) so that the information they collect about the costs of living around the world can be used by members of the public for research or other purposes.  However, the data on the UN ICSC website are only available in separate Excel spreadsheets for particular snapshots in time.  Additionally, access to the Retail Price Indices with Details (RPID) spreadsheets, which break down retail price indices by category of goods or services, requires signing up for an account, even though it's publicly available.
+The UN ICSC calculates retail price indices for a specific purpose: adjusting the salaries of UN staff around the world based on variations in the cost of living.  They make the retail price index data publicly available on a [dedicated website](https://unicsc.org/Home/DataRPI), because the information about costs of living around the world reflected in these indices could be useful for research or other purposes. 
 
-The GIS and Data Services team at the Brown University library has set up a script-based workflow for representing the data from the UN ICSC RPID spreadsheets in formats that are more conducive to analysis over space and time.  
+Data is published six times a year (Feb-Apr-Jun-Aug-Oct-Dec) from 2009 to the present. Prior to that time, data was published four times a year (Mar-Jun-Sep-Dec) and the transition occurred midway through 2008, which has five data points (Mar-Jun-Aug-Oct-Dec). On the UN ICSC website, data for each year-month snapshot in time is stored in a separate Excel spreadsheet.  Additionally, access to the Retail Price Indices with Details (RPID) spreadsheets, which break down retail price indices into several components reflecting different categories of goods or services, requires signing up for an account, even though it's publicly available.
 
-In this dataset, there are two numbers recorded for each retail category in a given country at a particular point in time: the price index itself, and a weight value.  Roughly speaking, each weight value represents the US Dollar nominal monthly expenditures by an average staff member at the country's UN duty station for that retail category.  Each index value indicates relative differences in price levels and inflation for a given retail category at that duty station compared to New York, with values less than 100 indicating lower costs for that category than in New York and values higher than 100 reflecting higher costs than in New York.  
+The GIS and Data Services team at the Brown University library has set up a script-based workflow for converting the data from the UN ICSC RPID spreadsheets into formats that are more conducive to analysis over space and time.  Visit the [processing folder of this repository](https://github.com/Brown-University-Library/geodata_un_retail_idx/tree/main/processing) for more details on the script.
 
-For a more accurate and detailed breakdown of what weight and index numbers represent and how they are calculated, please read the [United Nations Post Adjustment System pdf document](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/original_data/PABooklet.pdf) produced by the UN ICSC.
+There are two basic data points that are recorded for each retail category in a given country at a particular point in time: a numerical index and a "weight" value.  Roughly speaking, each weight value represents the US Dollar nominal monthly expenditures by an average staff member at a country's UN duty station for a given retail category, based on surveys of UN staff conducted by the ICSC.  Each index value indicates relative differences in costs for a given retail category at a duty station compared to costs in New York (the UN headquarters), taking into account price levels, local inflation patterns, and exchange rates.  Index values less than 100 indicate that costs for a given retail category at a given duty station are lower than they are in New York, and index values higher than 100 reflect the reverse.  
 
-The flat .csv file representing the full dataset in long format contains the following columns of data:
+For a more accurate and detailed breakdown of what weight and index numbers represent and how they are calculated, please consult the [United Nations Post Adjustment System methodology document](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/original_data/PABooklet.pdf) produced by the UN ICSC.
 
-^ column     ^ description                                                                                                   ^
-| unique_id  | a combination of yr_month, iso_a3, and cat_code that uniquely identifies each row (i.e. 2004_09_PAK_FOOD)                            |
-| yr_month   | YYYY_MM (i.e. 2004_09 for September 2004)                                                                     |
-| iso_a3     | the ISO 3166 Alpha 3 code that uniquely identifies the country of the duty station                            |
-| cmn_cntry  | the "common name" of the country, corresponding with its ISO 3166 Alpha 3 code                                |
-| un_cntry   | the "UN name" of the country (how the country was named by the UN in the original spreadsheet for that time)  |
-| city       | the city where the duty station for the country is located                                                    |
-| cat_code   | a four-letter code corresponding to a particular index category                                             |
-| group      | the full name of the index category                                                                           |
-| weight     |                                                                                                               |
-| index      |                                                                                                               |
+The [long-formatted .csv file](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/final_data/aggregate_files/all_un_icsc_rpid.csv) containing all of the data from 2004 to the present is organized with the following columns:
 
+| column     | description |
+| --------- | ------------ |
+| unique_id  | a combination of yr_month, iso_a3, and cat_code that uniquely identifies each row (i.e. 2004_09_PAK_FOOD) |
+| yr_month   | YYYY_MM (i.e. 2004_09 for September 2004) |
+| iso_a3     | the ISO 3166 Alpha 3 code that uniquely identifies the country of the duty station (i.e. PAK for Pakistan) |
+| cmn_cntry  | the "common name" of the country, corresponding with its ISO 3166 Alpha 3 code |
+| un_cntry   | the "UN name" of the country (how the country was named by the UN in the original spreadsheet for that time) |
+| city       | the city where the UN duty station for the country is located |
+| cat_code   | a four-letter code corresponding to a particular retail price category (see below for full list) |
+| group      | the full name of the retail price category |
+| weight     |                       |
+| index      |                       |
 
+Therefore, each row of the long-formatted file uniquely identifies a given category for a given duty station at a given time.  The [individual files for particular year-month snapshots](https://github.com/Brown-University-Library/geodata_un_retail_idx/tree/main/final_data/year_month_files) have the same column format.  In the [wide-formatted .csv file](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/final_data/aggregate_files/all_un_icsc_rpid_pivoted.csv), each row has all the index data for a given country at a given time, and the category codes are pivoted into separate columns.  For each four-letter category code (i.e. HOUS for housing-related costs), there is one column in the wide csv file for its corresponding weight (i.e. “HOUS_wgt”) and another column for its corresponding index (i.e. “HOUS_idx”). 
 
-The data is published six times a year (Feb-Apr-Jun-Aug-Oct-Dec) from 2009 to present. Prior to that time, data was published four times a year (Mar-Jun-Sep-Dec) and the transition occurred midway through 2008 which has five data points (Mar-Jun-Aug-Oct-Dec).
+The retail category names and corresponding four-character category codes are as follows:
 
-There are two sets of files:
-
-Retail Price Index (RPI) covers March 1997 to the present and contains a summary for each country with the name of the duty station city, an exchange rate, local currency, a total retail index, and a total index that excludes housing. Data from March 2002 to present are stored in two identical files, an Excel spreadsheet and a PDF. Prior to 2002 a mix of PDF, DOC, and plain text files (stored with the extension PRN) were used. The older .xls format was used from Mar 2002 to Aug 2013, and the modern .xlsx format is used from Dec 2013 to present.
-
-Retail Price Index with Details (RPID) covers December 2002 to the present. Data for each year-month is stored in an Excel spreadsheet with a macro that allows you to choose a single country / duty station and see how the total index for each country was weighted for different retail categories. Each spreadsheet has one worksheet for the macro (“Control”) and a second worksheet that lists the total index for all countries for that time (“Aggregation”). The older .xls format was used from March 2002 to August 2013, and the modern .xlsm format is used from December 2013 to present. The files for December 2002 to September 2003 are password protected and can't be opened, and the file for December 2003 displays index values but not their corresponding weights. 
-
-The data is published six times a year (Feb-Apr-Jun-Aug-Oct-Dec) from 2009 to present. Prior to that time, data was published four times a year (Mar-Jun-Sep-Dec) and the transition occured midway through 2008 which has five data points (Mar-Jun-Aug-Oct-Dec).  Data availability varies by country; see the [full data extent file](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/final_data/aggregate_files/data_extent.csv) for details.
-
-Roughly speaking, each weight value represents the US Dollar nominal monthly expenditures by an average staff member for a given spending category, and each index value represents the relative difference between costs for that spending category at that duty station and costs in New York (an index of 100 means costs are equal to that of New York at that time).  For a more accurate and detailed breakdown of what weight and index numbers represent and how they are calculated, please read the methodology document entitled "United Nations Post Adjustment System" which is included in PDF format as part of this dataset (_geodata -> un_icsc -> original_data -> PABooklet.pdf).
-
-The full list of columns in the year-month files and the mega file are as follows:
-
-
-
-
-The full list of index categories and corresponding category codes are as follows:
-
-
-^ cat_code  ^ group                                                                ^
+| cat_code  | group                                                                |
+| ---------- | ------------ |
 | FOOD      | Food And Non-alcoholic Beverages                                     |
 | ALCO      | Alcoholic Beverages And Tobacco                                      |
 | CLTH      | Clothing And Footwear                                                |
@@ -77,4 +63,4 @@ The full list of index categories and corresponding category codes are as follow
 
 The pension contribution category is also unique, as all UN staff pay a fixed US dollar amount in pension contributions.  This means that in addition to always having an index value of 100, the pension contribution category will list the same dollar weight value for all duty stations for a given time.  
 
-Please read the “United Nations Post Adjustment System” methodology document for more details on how these categories are determined and how "total" index values for each station at a given time are calculated.
+The [United Nations Post Adjustment System methodology document](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/original_data/PABooklet.pdf) contains more details on how these categories are determined, and how "total" index values for each duty station at a given time are calculated.
