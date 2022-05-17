@@ -12,6 +12,8 @@ The following products are available for viewing or download:
 * [Individual .csv files for particular year-month snapshots](https://github.com/Brown-University-Library/geodata_un_retail_idx/tree/main/final_data/year_month_files) 
 * A [data extent file](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/final_data/aggregate_files/data_extent.csv) listing the specific dates for which retail price index data is available for each country in the dataset.
 
+The UN ICSC are the original creators of this data, and they have requested that prospective users provide basic information about themselves and their anticipated uses of this data using the [Request Access button on their website.](https://icsc.un.org/Home/DataRPI)  Requesting access also gives users access to the original spreadsheet files that were used to generate this dataset.
+
 _Disclaimer: Every effort was made to insure that the data, which was compiled from public sources, was processed and presented accurately. The creators and Brown University disclaim any liability for errors, inaccuracies, or omissions that may be contained therein or for any damages that may arise from the foregoing. Users should independently verify the accuracy and fitness of the data for their purposes._
 
 ## Documentation
