@@ -6,11 +6,17 @@ This page was last updated on May 17, 2022.  The most recent update includes dat
 
 The data files in this repository are licensed under a [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/).  Specifically, they are to be used for non-commercial research purposes, they cannot be redistributed or republished, and the United Nations International Civil Service Commission (UN ICSC) must be cited as a source when the data is used for research.  
 
-The full time series is available as a .csv file in either a [long](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/final_data/aggregate_files/all_un_icsc_rpid.csv) or a [wide](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/final_data/aggregate_files/all_un_icsc_rpid_pivoted.csv) format.  [Individual .csv files for particular year-month snapshots](https://github.com/Brown-University-Library/geodata_un_retail_idx/tree/main/final_data/year_month_files) are also available for viewing or download.  Data availability varies by country over time; see the [full data extent file](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/final_data/aggregate_files/data_extent.csv) for details.
+The following products are available for viewing or download:
+* all data from 2004 through the present in a [long format](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/final_data/aggregate_files/all_un_icsc_rpid.csv) 
+* all data from 2004 through the present in a [wide format](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/final_data/aggregate_files/all_un_icsc_rpid_pivoted.csv) 
+* [Individual .csv files for particular year-month snapshots](https://github.com/Brown-University-Library/geodata_un_retail_idx/tree/main/final_data/year_month_files) 
+* A [data extent file](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/final_data/aggregate_files/data_extent.csv) listing the specific dates for which retail price index data is available for each country in the dataset.
+
+//Disclaimer: Every effort was made to insure that the data, which was compiled from public sources, was processed and presented accurately. The creators and Brown University disclaim any liability for errors, inaccuracies, or omissions that may be contained therein or for any damages that may arise from the foregoing. Users should independently verify the accuracy and fitness of the data for their purposes.//
 
 ## Documentation
 
-The UN ICSC calculates retail price indices for a specific purpose: adjusting the salaries of UN staff around the world based on variations in the cost of living.  They make the retail price index data publicly available on a [dedicated website](https://unicsc.org/Home/DataRPI), because the information about costs of living around the world reflected in these indices could be useful for research or other purposes. 
+The retail price indices in this dataset are officially called Post Adjustment Indices (PAI), and the UN ICSC creates them for a specific purpose: adjusting the salaries of UN staff around the world based on variations in the cost of living.  They make PAI data publicly available on a [dedicated website](https://unicsc.org/Home/DataRPI), because the information about costs of living around the world reflected in these indices could be useful for research or other purposes. 
 
 Data is published six times a year (Feb-Apr-Jun-Aug-Oct-Dec) from 2009 to the present. Prior to that time, data was published four times a year (Mar-Jun-Sep-Dec) and the transition occurred midway through 2008, which has five data points (Mar-Jun-Aug-Oct-Dec). On the UN ICSC website, data for each year-month snapshot in time is stored in a separate Excel spreadsheet.  Additionally, access to the Retail Price Indices with Details (RPID) spreadsheets, which break down retail price indices into several components reflecting different categories of goods or services, requires signing up for an account, even though it's publicly available.
 
@@ -32,8 +38,8 @@ The [long-formatted .csv file](https://github.com/Brown-University-Library/geoda
 | city       | the city where the UN duty station for the country is located |
 | cat_code   | a four-letter code corresponding to a particular retail price category (see below for full list) |
 | group      | the full name of the retail price category |
-| weight     |                       |
-| index      |                       |
+| weight     | US Dollar nominal monthly expenditure by an average UN staff member |
+| index      | numerical Post Adjustment Index value |
 
 Therefore, each row of the long-formatted file uniquely identifies a given category for a given duty station at a given time.  The [individual files for particular year-month snapshots](https://github.com/Brown-University-Library/geodata_un_retail_idx/tree/main/final_data/year_month_files) have the same column format.  In the [wide-formatted .csv file](https://github.com/Brown-University-Library/geodata_un_retail_idx/blob/main/final_data/aggregate_files/all_un_icsc_rpid_pivoted.csv), each row has all the index data for a given country at a given time, and the category codes are pivoted into separate columns.  For each four-letter category code (i.e. HOUS for housing-related costs), there is one column in the wide csv file for its corresponding weight (i.e. “HOUS_wgt”) and another column for its corresponding index (i.e. “HOUS_idx”). 
 
