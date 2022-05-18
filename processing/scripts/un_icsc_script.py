@@ -54,7 +54,7 @@ def initialize_dictionaries():
     global iso_dict, reverse_iso_dict, cat_dict, cat_list, aggregate_list, extent
 
     # dictionary with UN country names as keys and ISO codes as values
-    iso_dict = pd.read_csv(COUNTRY_TO_ISO_FILE) \
+    iso_dict = pd.read_csv(COUNTRY_TO_ISO_FILE, encoding='utf-8-sig') \
         .set_index('country').to_dict()['iso_alpha3']
 
     # dictionary with ISO codes as keys and common country names as values
@@ -283,7 +283,7 @@ def generate_flat_csv(file_name):
         if common_country not in extent.columns:
             extent[common_country] = None  # new column
         if data_date not in extent.index.names:
-            extent.append(pd.Series(name=data_date, dtype='str'))  # new row
+            pd.concat([extent, pd.Series(name=data_date, dtype='str')])  # new row
         extent.at[data_date, common_country] = 'x'
 
     # write each year-month csv to the output_csvs folder
