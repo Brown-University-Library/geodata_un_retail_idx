@@ -1,6 +1,6 @@
 This dataset is a time series of retail price indices that reflect the relative costs of various categories of goods and services experienced by United Nations (UN) staff at duty stations around the world.
 
-This page was last updated on May 17, 2022.  The most recent update includes data from January 2004 through present.
+This page was last updated on July 6, 2023.  The most recent update includes data from January 2004 through December 2022.
 
 ## Access
 
