@@ -54,7 +54,7 @@ def initialize_dictionaries():
     global iso_dict, reverse_iso_dict, cat_dict, cat_list, aggregate_list, extent
 
     # dictionary with UN country names as keys and ISO codes as values
-    iso_dict = pd.read_csv(COUNTRY_TO_ISO_FILE, encoding='utf-8-sig') \
+    iso_dict = pd.read_csv(COUNTRY_TO_ISO_FILE, encoding='utf-8-sig', encoding_errors='surrogateescape') \
         .set_index('country').to_dict()['iso_alpha3']
 
     # dictionary with ISO codes as keys and common country names as values
