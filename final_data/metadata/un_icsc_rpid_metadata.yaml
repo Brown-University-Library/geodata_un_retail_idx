@@ -1,6 +1,6 @@
 ---
 # TITLE
-dct_title_s: Retail Price Index by Country, World, 2004-2023
+dct_title_s: Retail Price Index by Country, World, 2004-2024
 
 # DESCRIPTION
 dct_description_sm:
@@ -43,11 +43,11 @@ dcat_theme_sm:
 
 # TEMPORAL
 dct_temporal_sm:
-- '2004-2023'
+- '2004-2024'
 - 21st century
 
 # DATE ISSUED
-dct_issued_s: '2023-12'
+dct_issued_s: '2024-12'
 
 # SPATIAL
 dct_spatial_sm:
@@ -74,14 +74,14 @@ dct_accessRights_s: Public
 dct_format_s: CSV
 
 # UNIQUE ID
-id: brown-08182022AAA
+id: brown-04282022AAA
 
 # IDENTIFIER
 dct_identifier_sm:
 - https://github.com/Brown-University-Library/geodata_un_retail_idx
 
 # METADATA MODIFIED
-gbl_mdModified_dt: '2024-02-21'
+gbl_mdModified_dt: '2025-04-28'
 
 # METADATA VERSION
 gbl_mdVersion_s: Aardvark
